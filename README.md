@@ -10,7 +10,7 @@ When I look at the guidelines of MI (Collet, J. P. et al., 2020) (Kristensen, S.
 
 ## Data Description
 
-We applied our methods to a publicly available dataset with a size of 1700 patients. The dataset was collected in a clinical hospital in Krasnoyarsk, Russia from 1992-1995. The database contains information about 111 medical features and a binary output representing if a patient with myocardial infarction shows complications or not.
+I applied the methods to a publicly available dataset with a size of 1700 patients. The dataset was collected in a clinical hospital in Krasnoyarsk, Russia from 1992-1995. The database contains information about 111 medical features and a binary output representing if a patient with myocardial infarction shows complications or not.
 
 There were several variable categories in the dataset:
 - General input values (e.g., ID, age, gender),
@@ -30,7 +30,7 @@ For the remaining rows and columns with missing value proportion less than 30%, 
 
 ### Categorical Variables
 
-After imputing missing values, our categorical variables still had the problem of being ordered. Machine learning algorithms cannot directly work with categorical data. The categories are usually ordered. These ordered categories must be converted into numbers. The usual approach is to apply one-hot-encoding. With one-hot-encoding, each categorical level becomes a separate feature in the dataset with binary values (1 or 0). This allows machine learning algorithms to read categorical data in a better way.
+After imputing missing values, categorical variables still had the problem of being ordered. Machine learning algorithms cannot directly work with categorical data. The categories are usually ordered. These ordered categories must be converted into numbers. The usual approach is to apply one-hot-encoding. With one-hot-encoding, each categorical level becomes a separate feature in the dataset with binary values (1 or 0). This allows machine learning algorithms to read categorical data in a better way.
 
 ### Continuous Variables
 
@@ -52,7 +52,7 @@ For XGBoost algorithm, a different approach was used in identifying the most rel
 
 ### Most important features
 
-When we compare the results of the feature selection for each algorithm, 9 most important features are the same. These features are the following:
+When I compare the results of the feature selection for each algorithm, 9 most important features are the same. These features are the following:
 
 - Age
 - Serum potassium content (K_BLOOD)
@@ -70,15 +70,14 @@ The results of each model can be found in Table 5.1, where various indicators sh
 
 ### ROC Curves
 
-A similar performance result can be found in Figure 5.1 where Receiver Operating Curve (ROC) and Area under the Receiver Operating Curve (AUC) for each of these models are shown in which the horizontal axis represents the false positive rates and the vertical true positive rates. Indicating the probability with which the algorithm can predict any observation correctly, a higher AUC score shows that the algorithm is more capable of distinguishing between the complications and no-complications. With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by
-0.65 AUC of simple decision tree with 15 features.
+A similar performance result can be found in Figure 5.1 where Receiver Operating Curve (ROC) and Area under the Receiver Operating Curve (AUC) for each of these models are shown in which the horizontal axis represents the false positive rates and the vertical true positive rates. Indicating the probability with which the algorithm can predict any observation correctly, a higher AUC score shows that the algorithm is more capable of distinguishing between the complications and no-complications. With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by 0.65 AUC of simple decision tree with 15 features.
 
 ## Limitations and Future Directions
 
-Our study had several limitations. 
+My study had several limitations. 
 
-First, there were many missing values in the data. Thus, we had to delete the records of many patients. This may lead to a sampling bias. The solution is to collect more samples that are complete. 
+First, there were many missing values in the data. Thus, I had to delete the records of many patients. This may lead to a sampling bias. The solution is to collect more samples that are complete. 
 
-Second, we also had to remove features with missing values above a certain threshold. We do not know if those features were significant; we had to remove them, nonetheless. If they were significant, those features might have increased the accuracy of our data. Thus, as the next step, we could incorporate more features that are either deleted. The number of features would increase complexity, but we can always reduce the number by applying a dimensionality reduction algorithm such as Principal Component Analysis (PCA).
+Second, I also had to remove features with missing values above a certain threshold. I do not know if those features were significant; I had to remove them, nonetheless. If they were significant, those features might have increased the accuracy of the data. Thus, as the next step, I could incorporate more features that are either deleted. The number of features would increase complexity, but I can always reduce the number by applying a dimensionality reduction algorithm such as Principal Component Analysis (PCA).
 
-Third, we obtained low accuracy from our machine learning algorithms (around 65%). Our accuracy results are a little better than a random choice. This low accuracy may be the result of several reasons. One reason might be that our algorithms were not good enough, because they were linear. As a solution, we could use more complex/non-linear algorithms, such as Deep Neural Networks that can increase accuracy at the expense of interpretability. Another possibility is that we had a limited number of data, only 1700 instances. In machine learning, this number is usually not sufficient for algorithms to converge to good accuracy. Thus, we may increase the number of training data that leads algorithms to learn better. Yet another reason might be that the features included in the model simply cannot account well enough for myocardial infarction complication. As a solution, we may get more data using a completely new set of features.
+Third, I obtained low accuracy from the machine learning algorithms (around 65%). The accuracy results are a little better than a random choice. This low accuracy may be the result of several reasons. One reason might be that the algorithms were not good enough, because they were linear. As a solution, I could use more complex/non-linear algorithms, such as Deep Neural Networks that can increase accuracy at the expense of interpretability. Another possibility is that I had a limited number of data, only 1700 instances. In machine learning, this number is usually not sufficient for algorithms to converge to good accuracy. Thus, I may increase the number of training data that leads algorithms to learn better. Yet another reason might be that the features included in the model simply cannot account well enough for myocardial infarction complication. As a solution, I may get more data using a completely new set of features.
