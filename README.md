@@ -1,4 +1,4 @@
-# Myocardial-Infarction
+# An Interpretable Machine Learning Algorithm for Myocardial Infarction
 
 ## Problem Description
 
