@@ -48,3 +48,37 @@ As the aim of the study is to have interpretable results, I used the recursive f
 
 For XGBoost algorithm, a different approach was used in identifying the most relevant features. Instead of using recursive elimination, feature importance2 of the XGBoost algorithm was generated to see which of the features are the most critical in the prediction of complications. Informed by the feature importance graph, I identify the most relevant features to be used in the algorithm. In the end, for the simple decision tree and XGBoost there were 3 different feature sets with different feature numbers are identified to build the models, whereas for random forest set of features used was 4.
 
+## Results
+
+### Most important features
+
+When we compare the results of the feature selection for each algorithm, 9 most important features are the same. These features are the following:
+
+- Age
+- Serum potassium content (K_BLOOD)
+- Serum sodium content (Na_BLOOD)
+- Serum A1AT content (ALT_BLOOD)
+- Serum AsAT content (AST BLOOD)
+- Erythrocyte sedimentation rate (ROE)
+- White blood cell count (L_BLOOD) 
+- Systolic blood pressure according to intensive care unit (S_AD_ORIT)
+- Diastolic blood pressure according to intensive care unit (D_AD_ORIT)
+
+### Accuracy
+
+The results of each model can be found in Table 5.1, where various indicators showing the performance of each model are tabulated.4 The models with the highest accuracy scores for each algorithm are highlighted. As can be observed, it is the random forest algorithm with 20 features that gives the best accuracy results.
+
+### ROC Curves
+
+A similar performance result can be found in Figure 5.1 where Receiver Operating Curve (ROC) and Area under the Receiver Operating Curve (AUC) for each of these models are shown in which the horizontal axis represents the false positive rates and the vertical true positive rates. Indicating the probability with which the algorithm can predict any observation correctly, a higher AUC score shows that the algorithm is more capable of distinguishing between the complications and no-complications. With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by
+0.65 AUC of simple decision tree with 15 features.
+
+## Limitations and Future Directions
+
+Our study had several limitations. 
+
+First, there were many missing values in the data. Thus, we had to delete the records of many patients. This may lead to a sampling bias. The solution is to collect more samples that are complete. 
+
+Second, we also had to remove features with missing values above a certain threshold. We do not know if those features were significant; we had to remove them, nonetheless. If they were significant, those features might have increased the accuracy of our data. Thus, as the next step, we could incorporate more features that are either deleted. The number of features would increase complexity, but we can always reduce the number by applying a dimensionality reduction algorithm such as Principal Component Analysis (PCA).
+
+Third, we obtained low accuracy from our machine learning algorithms (around 65%). Our accuracy results are a little better than a random choice. This low accuracy may be the result of several reasons. One reason might be that our algorithms were not good enough, because they were linear. As a solution, we could use more complex/non-linear algorithms, such as Deep Neural Networks that can increase accuracy at the expense of interpretability. Another possibility is that we had a limited number of data, only 1700 instances. In machine learning, this number is usually not sufficient for algorithms to converge to good accuracy. Thus, we may increase the number of training data that leads algorithms to learn better. Yet another reason might be that the features included in the model simply cannot account well enough for myocardial infarction complication. As a solution, we may get more data using a completely new set of features.
