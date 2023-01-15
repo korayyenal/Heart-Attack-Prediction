@@ -22,12 +22,24 @@ There were several variable categories in the dataset:
 
 ## Data Preprocessing
 
+### Missing Values
+
 We applied several pre-processing methods to get the dataset ready for further analysis. First, we deleted rows and columns with missing values more than a threshold. We selected the threshold according to common practices of machine learning articles. We deleted rows and columns of which more than 30% of data points are missing. As a result, 7 columns and 24 rows were deleted.
 
 For the remaining rows and columns with missing value proportion less than 30%, we applied data imputation. We applied ‘k-nearest neighbor’ imputation for binary and continuous variables. As the name suggests, the ‘k-nearest neighbor’ imputation strategy looks at nearest neighbors to determine the imputed value. For binary variables, we applied the ‘most frequent’ imputation strategy. This prevented binary values from having fractional values. With the ‘most frequent’ strategy, the missing values in binary variables will only be filled with either 0 or 1. This way, we filled the missing values for the entire dataset.
 
+### Categorical Variables
+
 After imputing missing values, our categorical variables still had the problem of being ordered. Machine learning algorithms cannot directly work with categorical data. The categories are usually ordered. These ordered categories must be converted into numbers. The usual approach is to apply one-hot-encoding. With one-hot-encoding, each categorical level becomes a separate feature in the dataset with binary values (1 or 0). This allows machine learning algorithms to read categorical data in a better way.
+
+### Continuous Variables
 
 Another problem we encountered was that the continuous variables had different scales. This would cause continuous variables with large values to affect the algorithm more. To avoid this problem, we applied centering; we subtracted the mean from each continuous variable and divided them into their standard deviation. This way, each continuous variable had zero mean and one unit of standard deviation.
 
-Our dataset initially had imbalanced data. some complications were a minority, and some were a majority. Thus, we merged all complications together and binarized the myocardial infarction complications output. We simplified the output of a patient to a binary decision, i.e., whether a patient has a complication or not. With this modification, we ended up with a binary classification problem. If a patient has a myocardial infarction complication, the output is one. Otherwise, it is zero
+### Imbalanced Data
+
+Our dataset initially had imbalanced data. some complications were a minority, and some were a majority. Thus, we merged all complications together and binarized the myocardial infarction complications output. We simplified the output of a patient to a binary decision, i.e., whether a patient has a complication or not. With this modification, we ended up with a binary classification problem. If a patient has a myocardial infarction complication, the output is one. Otherwise, it is zero.
+
+## Methodology
+
+In predicting the occurrence of complications, supervised machine learning algorithms are employed. As it is one of the aims of this study to present the decision-makers with insights over what features are important in predicting complications before they occur, only a few sets of machine learning algorithms can be of use for the study. Therefore, in order to render the results more interpretable, tree-based algorithms were put into use. Among the family of treebased algorithms, 3 of the algorithms – namely, simple decision tree, random forests, and XGBoost – were chosen as these algorithms approximately represent the different variety of the tree-based algorithms to a great extent
