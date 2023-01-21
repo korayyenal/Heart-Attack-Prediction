@@ -42,7 +42,7 @@ With this goal in mind, I use the following tree-based methods:
 - Random forest, and
 - XGboost
 
-, where they represent the variety of tree-based algorithms to a great extent.
+where they represent the variety of tree-based algorithms to a great extent.
 
 ### Recursive feature elimination 
 
