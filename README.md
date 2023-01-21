@@ -1,4 +1,4 @@
-# An Interpretable Machine Learning Algorithm for Myocardial Infarction
+# Myocardial Infarction Prediction using Interpretable Tree-Based Methods
 
 ## Problem Description
 
