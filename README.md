@@ -44,7 +44,7 @@ With this goal in mind, I use the following tree-based methods:
 
 where they represent the variety of tree-based algorithms to a great extent.
 
-### Recursive feature elimination 
+### Recursive Feature Elimination and Variable Importance
 
 For both decision tree and random forest, I use Recursive Feature Elimination technique to identify the number of features with the best accuracy. Once I find the number of features, I identify the selected features for each algorithm.
 
