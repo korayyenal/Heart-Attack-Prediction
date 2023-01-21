@@ -38,27 +38,25 @@ Remember that the goal of this study is to present decision-makers insights over
 
 With this goal in mind, I use the following tree-based methods:
 
-- Decision Tree
-- Random forest
+- Decision Tree,
+- Random forest, and
 - XGboost
 
-, where these algorithms pretty much represent the variety of tree-based algorithms to a great extent.
+, where they represent the variety of tree-based algorithms to a great extent.
 
 ### Recursive feature elimination 
 
-I use Recursive Feature Elimination technique to identify the number of features with the best accuracy for both decision tree and random forest algorithms.
+For both decision tree and random forest, I use Recursive Feature Elimination technique to identify the number of features with the best accuracy. Once I find the number of features, I identify the selected features for each algorithm.
 
-Once I find the number of features, I identify the selected features for each algorithm.
+For XGBoost algorithm, instead of using recursive elimination, I generate a feature importance graph and identify the most critical features in predicting the complications.
 
-Finding the selected features for each algorithm allows to build the actual algorithms based on these features, instead of using all the features in the dataset, which would have been more costly and likely to produce less interpretable results
-
-For XGBoost algorithm, a different approach was used in identifying the most relevant features. Instead of using recursive elimination, feature importance2 of the XGBoost algorithm was generated to see which of the features are the most critical in the prediction of complications. Informed by the feature importance graph, I identify the most relevant features to be used in the algorithm. In the end, for the simple decision tree and XGBoost there were 3 different feature sets with different feature numbers are identified to build the models, whereas for random forest set of features used was 4.
+In the end, I identify three feature sets with different number of features for Decision Tree and XGBoost, and four feature sets for Random Forest.
 
 ## Results
 
 ### Most important features
 
-When I compare the results of the feature selection for each algorithm, 9 most important features are the same. These features are the following:
+The 9 most important features are the same across all algorithms. These features are the following:
 
 - Age
 - Serum potassium content (K_BLOOD)
@@ -72,18 +70,17 @@ When I compare the results of the feature selection for each algorithm, 9 most i
 
 ### Accuracy
 
-The results of each model can be found in Table 5.1, where various indicators showing the performance of each model are tabulated.4 The models with the highest accuracy scores for each algorithm are highlighted. As can be observed, it is the random forest algorithm with 20 features that gives the best accuracy results.
+The results of each model can be found in Table 5.1, where various indicators showing the performance of each model are tabulated. The models with the highest accuracy scores for each algorithm are highlighted. As can be observed, it is the random forest algorithm with 20 features that gives the best accuracy results.
 
-### ROC Curves
+### ROC Curve
 
-A similar performance result can be found in Figure 5.1 where Receiver Operating Curve (ROC) and Area under the Receiver Operating Curve (AUC) for each of these models are shown in which the horizontal axis represents the false positive rates and the vertical true positive rates. Indicating the probability with which the algorithm can predict any observation correctly, a higher AUC score shows that the algorithm is more capable of distinguishing between the complications and no-complications. With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by 0.65 AUC of simple decision tree with 15 features.
+I use Receiver Operating Curve (ROC) graph and Area under the Curve (AUC) metric to compare model performances.
+
+With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by 0.65 AUC of simple decision tree with 15 features.
 
 ## Limitations and Future Directions
 
-My study had several limitations. 
+My study had several limitations:
 
-First, there were many missing values in the data. Thus, I had to delete the records of many patients. This may lead to a sampling bias. The solution is to collect more samples that are complete. 
-
-Second, I also had to remove features with missing values above a certain threshold. I do not know if those features were significant; I had to remove them, nonetheless. If they were significant, those features might have increased the accuracy of the data. Thus, as the next step, I could incorporate more features that are either deleted. The number of features would increase complexity, but I can always reduce the number by applying a dimensionality reduction algorithm such as Principal Component Analysis (PCA).
-
-Third, I obtained low accuracy from the machine learning algorithms (around 65%). The accuracy results are a little better than a random choice. This low accuracy may be the result of several reasons. One reason might be that the algorithms were not good enough, because they were linear. As a solution, I could use more complex/non-linear algorithms, such as Deep Neural Networks that can increase accuracy at the expense of interpretability. Another possibility is that I had a limited number of data, only 1700 instances. In machine learning, this number is usually not sufficient for algorithms to converge to good accuracy. Thus, I may increase the number of training data that leads algorithms to learn better. Yet another reason might be that the features included in the model simply cannot account well enough for myocardial infarction complication. As a solution, I may get more data using a completely new set of features.
+- many missing values in the data (removed features with missing values above a certain threshold.)
+- low accuracy (around 65%. I could use non-linear algorithms such as Deep Neural Networks that can increase accuracy at the expense of interpretability)
