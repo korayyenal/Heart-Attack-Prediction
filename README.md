@@ -70,11 +70,16 @@ The 9 most important features are the same across all algorithms. These features
 
 ### Accuracy
 
+<img src="figures/accuracy_table.png" width=70% height=70%>
+
 The results of each model can be found in Table 5.1, where various indicators showing the performance of each model are tabulated. The models with the highest accuracy scores for each algorithm are highlighted. As can be observed, it is the random forest algorithm with 20 features that gives the best accuracy results.
 
 ### ROC Curve
 
 I use Receiver Operating Curve (ROC) graph and Area under the Curve (AUC) metric to compare model performances.
+
+<img src="figures/auc_graph.png" width=50% height=50%>
+
 
 With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by 0.65 AUC of simple decision tree with 15 features.
 
