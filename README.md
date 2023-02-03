@@ -48,20 +48,6 @@ In the end, I identify three feature sets with different number of features for 
 
 ## Results
 
-### Most important features
-
-The 9 most important features are the same across all algorithms. These features are the following:
-
-- Age
-- Serum potassium content (K_BLOOD)
-- Serum sodium content (Na_BLOOD)
-- Serum A1AT content (ALT_BLOOD)
-- Serum AsAT content (AST BLOOD)
-- Erythrocyte sedimentation rate (ROE)
-- White blood cell count (L_BLOOD) 
-- Systolic blood pressure according to intensive care unit (S_AD_ORIT)
-- Diastolic blood pressure according to intensive care unit (D_AD_ORIT)
-
 ### Accuracy
 
 <img src="figures/accuracy_table.png" width=70% height=70%>
@@ -74,8 +60,21 @@ I use Receiver Operating Curve (ROC) graph and Area under the Curve (AUC) metric
 
 <img src="figures/auc_graph.png" width=50% height=50%>
 
-
 With 0.5 AUC score signifying an algorithm having a 50% chance of distinguishing between classes, it was found that XGboost with all of the features have 0.72 AUC, while random forest with 20 features has 0.70 AUC, followed by 0.65 AUC of simple decision tree with 15 features.
+
+### Feature Importance
+
+The 9 most important features are the same across all algorithms. These features are the following:
+
+- Age
+- Serum potassium content (K_BLOOD)
+- Serum sodium content (Na_BLOOD)
+- Serum A1AT content (ALT_BLOOD)
+- Serum AsAT content (AST BLOOD)
+- Erythrocyte sedimentation rate (ROE)
+- White blood cell count (L_BLOOD) 
+- Systolic blood pressure according to intensive care unit (S_AD_ORIT)
+- Diastolic blood pressure according to intensive care unit (D_AD_ORIT)
 
 ## Limitations and Future Directions
 
