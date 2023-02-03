@@ -4,15 +4,11 @@
 
 In this project, I build and compare interpretable tree-based methods for predicting complications of myocardial infarction (i.e., heart attack).
 
-The main goal is to present decision-makers some insights over what features are critical in predicting complications before they occur.
-
-The task is to predict whether the patient will incur a complication or not (a binary classification problem) given the patient's characteristics.
+The task is to predict whether the patient will incur a complication or not (binary classification) given the patient's characteristics and to present decision-makers some insights over what features are critical in predicting complications (feature importance).
 
 I apply methods to a publicly available UCI dataset with a size of 1700 patients. The dataset was collected in a clinical hospital in Krasnoyarsk, Russia from 1992-1995. The database contains information about 111 medical features and a binary output representing if a patient with myocardial infarction shows complications or not.
 
 ## Data Description
-
-I applied the methods to a publicly available dataset with a size of 1700 patients. The dataset was collected in a clinical hospital in Krasnoyarsk, Russia from 1992-1995. The database contains information about 111 medical features and a binary output representing if a patient with myocardial infarction shows complications or not.
 
 There were several variable categories in the dataset:
 - General input values (e.g., ID, age, gender),
@@ -34,15 +30,13 @@ I apply the following pre-processing techniques:
 
 ## Methodology
 
-Remember that the goal of this study is to present decision-makers insights over what features are important in predicting complications before they occur. Consequently, only a few sets of machine learning algorithms can be of useful, as most machine learning algorithms are not interpretable.
+Remember that the goal is to present decision-makers insights over what features are important in predicting complications before they occur. Only a few sets of machine learning algorithms can be useful, as most algorithms are not interpretable.
 
 With this goal in mind, I use the following tree-based methods:
 
 - Decision Tree,
 - Random forest, and
 - XGboost
-
-where they represent the variety of tree-based algorithms to a great extent.
 
 ### Recursive Feature Elimination and Variable Importance
 
