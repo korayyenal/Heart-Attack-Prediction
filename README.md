@@ -80,5 +80,5 @@ The 9 most important features are the same across all algorithms. These features
 
 My study had several limitations:
 
-- many missing values in the data (removed features with missing values above a certain threshold.)
-- low accuracy (around 65%. I could use non-linear algorithms such as Deep Neural Networks that can increase accuracy at the expense of interpretability)
+- The raw data had many missing values. The solution was to remove rows and features with missing values above a certain threshold (around 40%).
+- I obtained a low accuracy, i.e., around 65%. As the next step, one possibility is to use non-linear algorithms such as Deep Neural Networks, which can increase accuracy at the expense of interpretability.
