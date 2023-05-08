@@ -2,9 +2,9 @@
 
 ## Problem Description
 
-In this project, I build and compare interpretable tree-based methods for predicting complications of myocardial infarction (i.e., heart attack).
+In this project, I compare and contrast tree-based methods for predicting complications of myocardial infarction (i.e., heart attack).
 
-The task is to predict whether the patient will incur a complication or not (binary classification) given the patient's characteristics and to present decision-makers some insights over what features are critical in predicting complications (feature importance).
+The task is to predict whether the patient will incur a complication or not (binary classification task) given the patient's characteristics and to present decision-makers some insights over what features are critical in predicting complications (feature importance).
 
 I apply methods to a publicly available UCI dataset with a size of 1700 patients. The dataset was collected in a clinical hospital in Krasnoyarsk, Russia from 1992-1995. The database contains information about 111 medical features and a binary output representing if a patient with myocardial infarction shows complications or not.
 
