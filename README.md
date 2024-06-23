@@ -1,4 +1,4 @@
-# Myocardial Infarction Prediction using Interpretable Tree-Based Methods
+# Heart-Attack Prediction using Interpretable Tree-Based Methods
 
 ## Problem Description
 
